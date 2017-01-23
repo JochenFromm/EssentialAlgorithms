@@ -1,0 +1,4 @@
+
+#!/bin/bash
+
+pry -r ./sh/env.rb
