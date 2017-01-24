@@ -12,3 +12,8 @@ Graph and Tree Search
 
 * A* search algorithm
   https://en.wikipedia.org/wiki/A*_search_algorithm
+
+Classic
+
+* Map Reduce
+  https://en.wikipedia.org/wiki/MapReduce
