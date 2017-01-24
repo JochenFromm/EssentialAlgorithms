@@ -1,10 +1,11 @@
 class Node
-  attr_accessor :neighbors
-  attr_accessor :name
+  attr_accessor :neighbors, :name, :distance, :previous
 
   def initialize(opts = {})
     @name = opts[:name]
     @neighbors = []
+    @previous = nil
+    @distance = 0
   end
 end
 
@@ -30,6 +31,21 @@ class Graph
 
   def find_node(name)
     @nodes.find { |node| node.name == name}
+  end
+
+  def find_nodes(names)
+    @nodes.select { |node| names.include?(node.name) }
+  end
+
+  def distance(node_a, node_b)
+    i = @nodes.index(node_a)
+    j = @nodes.index(node_b)
+    @matrix[i][j]
+  end
+
+  def node_with_min_distance(list)
+    min = list.map{ |node| node.distance }.min
+    list.select{ |node| node.distance == min }.first
   end
 
   def add_edge(node_a, node_b, weight)
