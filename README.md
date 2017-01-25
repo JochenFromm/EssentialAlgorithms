@@ -1,5 +1,14 @@
 # Essential Algorithms
 
+A procedure is a pattern for the local evolution of a computational process.
+(SICP book chapter 1)
+https://mitpress.mit.edu/sicp/chapter1/node11.html
+
+An al·go·rithm is a self-contained step-by-step set of operations and procedures.
+https://en.wikipedia.org/wiki/Algorithm
+
+It is a procedure or recipe for solving a problem, based on conducting a sequence of specified actions. Executing an algorithm means following a precise list of steps in order to solve a problem, and the problem is usually turning an input into an output.
+
 Strings & String Metrics
 
 * Levenshtein_distance
@@ -13,7 +22,17 @@ Graph and Tree Search
 * A* search algorithm
   https://en.wikipedia.org/wiki/A*_search_algorithm
 
+Combinatorial optimization
+
+* Backtracking
+  https://en.wikipedia.org/wiki/Backtracking
+
 Classic
 
 * Map Reduce
   https://en.wikipedia.org/wiki/MapReduce
+
+* Backpropagation Algorithm
+  https://en.wikipedia.org/wiki/Backpropagation
+
+
