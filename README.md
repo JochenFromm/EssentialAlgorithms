@@ -11,12 +11,12 @@ It is a procedure or recipe for solving a problem, based on conducting a sequenc
 
 Strings & String Metrics
 
-* Levenshtein_distance
+* [Levenshtein distance](levenshtein.rb)
   https://en.wikipedia.org/wiki/Levenshtein_distance
 
 Graph and Tree Search
 
-* Dijkstra's algorithm
+* [Dijkstra's algorithm](dijkstra.rb)
   https://en.wikipedia.org/wiki/Dijkstra's_algorithm
 
 * A* search algorithm
@@ -24,12 +24,15 @@ Graph and Tree Search
 
 Combinatorial optimization
 
-* Backtracking
+* [Dynamic Programming](dynamic_programming.rb)
+  https://en.wikipedia.org/wiki/Dynamic_programming
+
+* [Backtracking](backtracking.rb)
   https://en.wikipedia.org/wiki/Backtracking
 
 Classic
 
-* Map Reduce
+* [Map Reduce](map_reduce.rb)
   https://en.wikipedia.org/wiki/MapReduce
 
 * Backpropagation Algorithm
