@@ -9,6 +9,11 @@ https://en.wikipedia.org/wiki/Algorithm
 
 It is a procedure or recipe for solving a problem, based on conducting a sequence of specified actions. Executing an algorithm means following a precise list of steps in order to solve a problem, and the problem is usually turning an input into an output.
 
+The overall list of algorithms is huge.
+https://en.wikipedia.org/wiki/List_of_algorithms
+
+Here is a small selection of some essential ones:
+
 Strings & String Metrics
 
 * [Levenshtein distance](levenshtein.rb)
@@ -32,8 +37,11 @@ Combinatorial optimization
 
 Classic
 
-* [Map Reduce](map_reduce.rb)
+* [MapReduce](map_reduce.rb)
   https://en.wikipedia.org/wiki/MapReduce
+
+* [PageRank](page_rank.rb)
+  https://en.wikipedia.org/wiki/PageRank
 
 * Backpropagation Algorithm
   https://en.wikipedia.org/wiki/Backpropagation
