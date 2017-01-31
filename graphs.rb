@@ -16,16 +16,48 @@ class Graph
     @matrix
   end
 
+  # opts = {nodes: nodes}
+  # where nodes is either an array with node names and weights
+  # nodes: [['a', 'b', 4],
+  #         ['a', 'h', 8],
+  #         ['b', 'h', 11]
+  # or an hash with connections of equal weight
+  # nodes: {'a' => ['b', 'h']}
+  #         'b' => 'h'}
   def initialize(opts = {})
-    node_names = opts[:nodes].map{ |a| a.slice(0,2) }.flatten.uniq
+    initialize_array(opts) if opts[:nodes].is_a? Array
+    initialize_hash(opts) if opts[:nodes].is_a? Hash
+  end
+
+  def initialize_matrix(node_names)
     @nodes = node_names.map{ |name| Node.new name: name }
-    node_count = node_names.count
+    node_count = @nodes.count
     @matrix = Array.new(node_count) { Array.new(node_count, 0) }
+  end
+
+  def initialize_hash(opts)
+    node_names = (opts[:nodes].keys + opts[:nodes].values).flatten.uniq
+    initialize_matrix(node_names)
+
+    opts[:nodes].each do |source, targets|
+      Array(targets).each do |target|
+        node_a = find_node(source)
+        node_b = find_node(target)
+        add_edge(node_a, node_b, 1)
+        add_edge(node_b, node_a, 1)
+      end
+    end
+  end
+
+  def initialize_array(opts)
+    node_names = opts[:nodes].map{ |a| a.slice(0,2) }.flatten.uniq
+    initialize_matrix(node_names)
 
     opts[:nodes].each do |node|
       node_a = find_node(node[0])
       node_b = find_node(node[1])
       add_edge(node_a, node_b, node[2])
+      add_edge(node_b, node_a, node[2])
     end
   end
 
@@ -51,10 +83,36 @@ class Graph
   def add_edge(node_a, node_b, weight)
     i = @nodes.index(node_a)
     j = @nodes.index(node_b)
-    @matrix[i][j] = weight
     @matrix[j][i] = weight
     node_a.neighbors << node_b.name
-    node_b.neighbors << node_a.name
   end
 end
 
+class DirectedGraph < Graph
+  def initialize_hash(opts)
+    node_names = (opts[:nodes].keys + opts[:nodes].values).flatten.uniq
+    initialize_matrix(node_names)
+
+    opts[:nodes].each do |source, targets|
+      Array(targets).each do |target|
+        node_a = find_node(source)
+        node_b = find_node(target)
+        add_edge(node_a, node_b, 1)
+      end
+    end
+  end
+
+  def initialize_array(opts)
+    node_names = opts[:nodes].map{ |a| a.slice(0,2) }.flatten.uniq
+    initialize_matrix(node_names)
+
+    opts[:nodes].each do |node|
+      node_a = find_node(node[0])
+      node_b = find_node(node[1])
+      add_edge(node_a, node_b, node[2])
+    end
+  end
+end
+
+class UndirectedGraph < Graph
+end
