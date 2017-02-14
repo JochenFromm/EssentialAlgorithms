@@ -2,6 +2,9 @@
 # Levenshtein Distance
 # https://en.wikipedia.org/wiki/Levenshtein_distance
 
+# see also the modified Damerau-Levenshtein Distance
+# https://en.wikipedia.org/wiki/Damerau-Levenshtein_distance
+
 module Levenshtein
 
   def self.distance(s, t)
