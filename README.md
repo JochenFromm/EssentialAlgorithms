@@ -14,10 +14,13 @@ https://en.wikipedia.org/wiki/List_of_algorithms
 
 Here is a small selection of some essential ones:
 
-Strings & String Metrics
+Strings Matching & String Metrics
 
 * [Levenshtein distance](levenshtein.rb)
   https://en.wikipedia.org/wiki/Levenshtein_distance
+
+* [Rabin-Karp](rabin_karp.rb) used for example in Plagiarism detection
+  https://en.wikipedia.org/wiki/Rabin-Karp_algorithm
 
 Graph and Tree Search
 
