@@ -2,6 +2,9 @@
 # Map Reduce
 # https://en.wikipedia.org/wiki/MapReduce
 
+# MapReduce Patterns, Algorithms, and Use Cases
+# https://highlyscalable.wordpress.com/2012/02/01/mapreduce-patterns/
+
 module MapReduce
 
   # Count the frequency of letters in a string
