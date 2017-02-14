@@ -12,9 +12,7 @@ module RabinKarp
     (0..n-m).each do |i|
       sub_str = s[i, m]
       h = hash_func(sub_str)
-      if h == pattern_hash
-        return i if sub_str == pattern
-      end
+      return i if h == pattern_hash && sub_str == pattern
     end
     return nil
   end
@@ -29,9 +27,7 @@ module RabinKarp
     (0..n-m).each do |i|
       sub_str = s[i, m]
       h = rolling_hash_func(sub_str, old_sub_str, h) if i > 0
-      if h == pattern_hash
-        return i if s[i..i+m-1] == pattern
-      end
+      return i if h == pattern_hash && sub_str == pattern
       old_sub_str = sub_str
     end
     return nil
