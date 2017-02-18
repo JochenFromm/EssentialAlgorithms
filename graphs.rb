@@ -1,11 +1,12 @@
 class Node
-  attr_accessor :neighbors, :name, :distance, :previous
+  attr_accessor :neighbors, :name, :distance, :previous, :visited
 
   def initialize(opts = {})
     @name = opts[:name]
     @neighbors = []
     @previous = nil
     @distance = 0
+    @visited = false
   end
 end
 
