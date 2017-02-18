@@ -49,4 +49,6 @@ Classic
 * Backpropagation Algorithm
   https://en.wikipedia.org/wiki/Backpropagation
 
+* [CellularAutomaton](automata.rb)
+  https://en.wikipedia.org/wiki/Cellular_automaton
 
