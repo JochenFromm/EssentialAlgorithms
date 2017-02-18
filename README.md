@@ -24,6 +24,9 @@ Strings Matching & String Metrics
 
 Graph and Tree Search
 
+* [BFS and DFS](graph_traversal.rb)
+  https://en.wikipedia.org/wiki/Depth-first_search
+
 * [Dijkstra's algorithm](dijkstra.rb)
   https://en.wikipedia.org/wiki/Dijkstra's_algorithm
 
