@@ -56,7 +56,11 @@ module RabinKarp
   def self.test
     h = {
       "test if this works" => "test",
-      "this is a test" => "test"
+      "a great test" => "great",
+      "is test successful" => "test",
+      "is this great test successful" => "great",
+      "this is a test" => "test",
+      "this is a great test" => "test"
     }
     h.each do |string, pattern|
       puts "position of '#{pattern}' in '#{string}' = #{index(string, pattern)}"
