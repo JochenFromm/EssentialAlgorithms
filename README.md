@@ -33,7 +33,7 @@ Graph and Tree Search
 * [Dijkstra's algorithm](dijkstra.rb)
   https://en.wikipedia.org/wiki/Dijkstra's_algorithm
 
-* A* search algorithm
+* [A* search algorithm](astar_search.rb)
   https://en.wikipedia.org/wiki/A*_search_algorithm
 
 Combinatorial optimization
