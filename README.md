@@ -22,6 +22,9 @@ Strings Matching & String Metrics
 * [Rabin-Karp](rabin_karp.rb) used for example in Plagiarism detection
   https://en.wikipedia.org/wiki/Rabin-Karp_algorithm
 
+* [Boyer-Moore](boyer_moore.rb) used for example in GNU's grep
+  https://en.wikipedia.org/wiki/Boyer-Moore_string_search_algorithm
+
 Graph and Tree Search
 
 * [BFS and DFS](graph_traversal.rb)

@@ -2,6 +2,7 @@
 require './backtracking.rb'
 require './levenshtein.rb'
 require './rabin_karp.rb'
+require './boyer_moore.rb'
 require './graphs.rb'
 require './graph_traversal.rb'
 require './dijkstra.rb'
