@@ -11,7 +11,7 @@ module KarmarkarKarp
     pairs, diffs = pair_differences(set)
     left, right = build_sets(pairs, diffs)
     puts "left #{left}, sum #{left.inject(&:+)}"
-    puts "right #{right}, sum #{left.inject(&:+)}"
+    puts "right #{right}, sum #{right.inject(&:+)}"
     return left, right
   end
 
@@ -56,6 +56,10 @@ module KarmarkarKarp
     p = partition(set)
 
     set = [2, 10, 3, 8, 5, 7, 9, 5, 3, 2]
+    puts "partition #{set}"
+    p = partition(set)
+
+    set = [771, 121, 281, 854, 885, 734, 486, 1003, 83, 62]
     puts "partition #{set}"
     p = partition(set)
   end
