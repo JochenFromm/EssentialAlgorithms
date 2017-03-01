@@ -44,6 +44,9 @@ Combinatorial optimization
 * [Backtracking](backtracking.rb)
   https://en.wikipedia.org/wiki/Backtracking
 
+* [Karmarkar Karp](karmarkar_karp.rb), the easiest hard problem
+  https://en.wikipedia.org/wiki/Partition_problem
+
 Classic
 
 * [MapReduce](map_reduce.rb)
