@@ -69,3 +69,4 @@ end
 # $ irb
 # > require './karmarkar_karp.rb'
 # > KarmarkarKarp.test
+# > KarmarkarKarp.partition([17, 6, 13, 9, 19 ])
