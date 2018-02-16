@@ -52,20 +52,6 @@ module RabinKarp
     end
     r
   end
-
-  def self.test
-    h = {
-      "test if this works" => "test",
-      "a great test" => "great",
-      "is test successful" => "test",
-      "is this great test successful" => "great",
-      "this is a test" => "test",
-      "this is a great test" => "test"
-    }
-    h.each do |string, pattern|
-      puts "position of '#{pattern}' in '#{string}' = #{index(string, pattern)}"
-    end
-  end
 end
 
 def process_input(filename, pattern)
@@ -78,10 +64,9 @@ puts process_input(ARGV[0], ARGV[1]) if __FILE__==$0
 
 # usage
 # $ irb
-# > require './rabin_karp.rb'
-# > RabinKarp.test
+# > require './algorithms/rabin_karp.rb'
 # > RabinKarp.index('test if this works', 'test')
 
 # or
-# ruby rabin_karp.rb examples/example.txt "George Washington"
+# ruby algorithms/rabin_karp.rb examples/example.txt "George Washington"
 

@@ -57,7 +57,7 @@ puts process_input(ARGV[0], ARGV[1]) if __FILE__==$0
 
 # usage
 # $ irb
-# > require './boyer_moore.rb'
+# > require './algorithms/boyer_moore.rb'
 # > BoyerMoore.test
 # > BoyerMoore.index('test if this works', 'test')
 

@@ -1,5 +1,7 @@
 # Essential Algorithms
 
+[![Build Status](https://travis-ci.org/JochenFromm/EssentialAlgorithms.svg)](https://travis-ci.org/JochenFromm/EssentialAlgorithms)
+
 A procedure is a pattern for the local evolution of a computational process.
 (SICP book chapter 1)
 https://mitpress.mit.edu/sicp/chapter1/node11.html
@@ -16,48 +18,48 @@ Here is a small selection of some essential ones:
 
 Strings Matching & String Metrics
 
-* [Levenshtein distance](levenshtein.rb)
+* [Levenshtein distance](algorithms/levenshtein.rb)
   https://en.wikipedia.org/wiki/Levenshtein_distance
 
-* [Rabin-Karp](rabin_karp.rb) used for example in Plagiarism detection
+* [Rabin-Karp](algorithms/rabin_karp.rb) used for example in Plagiarism detection
   https://en.wikipedia.org/wiki/Rabin-Karp_algorithm
 
-* [Boyer-Moore](boyer_moore.rb) used for example in GNU's grep
+* [Boyer-Moore](algorithms/boyer_moore.rb) used for example in GNU's grep
   https://en.wikipedia.org/wiki/Boyer-Moore_string_search_algorithm
 
 Graph and Tree Search
 
-* [BFS and DFS](graph_traversal.rb)
+* [BFS and DFS](algorithms/graph_traversal.rb)
   https://en.wikipedia.org/wiki/Depth-first_search
 
-* [Dijkstra's algorithm](dijkstra.rb)
+* [Dijkstra's algorithm](algorithms/dijkstra.rb)
   https://en.wikipedia.org/wiki/Dijkstra's_algorithm
 
-* [A* search algorithm](astar_search.rb)
+* [A* search algorithm](algorithms/astar_search.rb)
   https://en.wikipedia.org/wiki/A*_search_algorithm
 
 Combinatorial optimization
 
-* [Dynamic Programming](dynamic_programming.rb)
+* [Dynamic Programming](algorithms/dynamic_programming.rb)
   https://en.wikipedia.org/wiki/Dynamic_programming
 
-* [Backtracking](backtracking.rb)
+* [Backtracking](algorithms/backtracking.rb)
   https://en.wikipedia.org/wiki/Backtracking
 
-* [Karmarkar Karp](karmarkar_karp.rb), the easiest hard problem
+* [Karmarkar Karp](algorithms/karmarkar_karp.rb), the easiest hard problem
   https://en.wikipedia.org/wiki/Partition_problem
 
 Classic
 
-* [MapReduce](map_reduce.rb)
+* [MapReduce](algorithms/map_reduce.rb)
   https://en.wikipedia.org/wiki/MapReduce
 
-* [PageRank](page_rank.rb)
+* [PageRank](algorithms/page_rank.rb)
   https://en.wikipedia.org/wiki/PageRank
 
 * Backpropagation Algorithm
   https://en.wikipedia.org/wiki/Backpropagation
 
-* [CellularAutomaton](automata.rb)
+* [CellularAutomaton](algorithms/automata.rb)
   https://en.wikipedia.org/wiki/Cellular_automaton
 

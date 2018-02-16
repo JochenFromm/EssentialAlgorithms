@@ -29,8 +29,19 @@ class Grid
     w = nodes.first.length
     h = nodes.length
     obj = new(w, h)
-    obj.nodes = nodes
+    obj.nodes = nodes.clone
     obj
+  end
+
+  def to_array
+    nodes
+  end
+
+  def mark_points(points, mark = '.')
+    points.each do |key|
+      point = Point.new_from_key(key)
+      self[point.y][point.x] = mark
+    end
   end
 
   def width

@@ -1,5 +1,0 @@
-
-#!/bin/bash
-
-gem install pry
-gem install pry-byebug

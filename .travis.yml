@@ -1,0 +1,15 @@
+sudo: false
+
+language: ruby
+
+rvm:
+  - 2.3.3
+
+cache:
+  directories:
+    - "${HOME}/.rvm"
+    - "${TRAVIS_BUILD_DIR}/vendor/bundle"
+
+script:
+  - bundle install
+  - bundle exec rspec spec
