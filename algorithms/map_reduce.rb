@@ -8,14 +8,16 @@
 module MapReduce
 
   # Count the frequency of letters in a string
-  def self.letter_frequency(text)
-    count_items(text, :letters)
+  def self.letter_frequency(text, min = 3)
+    result = count_items(text, :letters)
+    result.select { |key, value| value > min }
   end
 
   # Count the frequency of words in a text,
   # returns Word Cloud data similar to Wordle
-  def self.word_frequency(text)
-    count_items(text, :words)
+  def self.word_frequency(text, min = 3)
+    result = count_items(text, :words)
+    result.select { |key, value| value > min }
   end
 
   def self.count_items(string, item = :letters)
@@ -43,16 +45,6 @@ module MapReduce
     end
     frequency
   end
-
-  def self.test
-    %w{kitten sitting kitchen}.each do |s|
-      puts "letter_frequency('#{s}') = #{letter_frequency(s)}"
-    end
-
-    ["Yes Yes we can do it. Yes we can"].each do |s|
-      puts "word_frequency('#{s}') = #{word_frequency(s)}"
-    end
-  end
 end
 
 def process_input(filename)
@@ -65,7 +57,8 @@ puts process_input(ARGV[0]) if __FILE__==$0
 # usage
 # $ irb
 # > require './algorithms/map_reduce.rb'
-# > MapReduce.test
+# > MapReduce.letter_frequency('kitten', 0)
+# > MapReduce.word_frequency('Yes yes yes we can', 0)
 
 # or
-# ruby map_reduce.rb examples/example.txt
+# ruby algorithms/map_reduce.rb examples/example.txt
