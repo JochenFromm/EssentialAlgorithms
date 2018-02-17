@@ -1,4 +1,5 @@
 
+require 'json'
 require './algorithms/backtracking.rb'
 require './algorithms/levenshtein.rb'
 require './algorithms/rabin_karp.rb'
@@ -6,6 +7,7 @@ require './algorithms/boyer_moore.rb'
 require './algorithms/graphs.rb'
 require './algorithms/graph_traversal.rb'
 require './algorithms/dijkstra.rb'
+require './algorithms/knn.rb'
 require './algorithms/map_reduce.rb'
 require './algorithms/page_rank.rb'
 require './algorithms/dynamic_programming.rb'

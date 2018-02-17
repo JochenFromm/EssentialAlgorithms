@@ -49,6 +49,14 @@ Combinatorial optimization
 * [Karmarkar Karp](algorithms/karmarkar_karp.rb), the easiest hard problem
   https://en.wikipedia.org/wiki/Partition_problem
 
+Classification and Machine Learning
+
+* [k-NN](algorithms/knn.rb) k-nearest neighbors algorithm
+  https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
+
+* Backpropagation Algorithm
+  https://en.wikipedia.org/wiki/Backpropagation
+
 Classic
 
 * [MapReduce](algorithms/map_reduce.rb)
@@ -56,9 +64,6 @@ Classic
 
 * [PageRank](algorithms/page_rank.rb)
   https://en.wikipedia.org/wiki/PageRank
-
-* Backpropagation Algorithm
-  https://en.wikipedia.org/wiki/Backpropagation
 
 * [CellularAutomaton](algorithms/automata.rb)
   https://en.wikipedia.org/wiki/Cellular_automaton
