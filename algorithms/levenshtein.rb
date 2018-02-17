@@ -45,7 +45,7 @@ puts process_input(ARGV[0], ARGV[1]) if __FILE__==$0
 
 # usage
 # $ irb
-# > require './levenshtein.rb'
+# > require './algorithms/levenshtein.rb'
 # > Levenshtein.test
 # > Levenshtein.distance('kitten', 'kitchen')
 

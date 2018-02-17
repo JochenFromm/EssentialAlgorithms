@@ -2,7 +2,7 @@
 # Dijkstra's_algorithm
 # https://en.wikipedia.org/wiki/Dijkstra's_algorithm
 
-require './graphs.rb'
+require './algorithms/graphs.rb'
 
 module Dijkstra
 

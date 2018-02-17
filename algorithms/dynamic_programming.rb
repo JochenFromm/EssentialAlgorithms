@@ -48,6 +48,6 @@ end
 
 # usage
 # $ irb
-# > require './DynamicProgramming.rb'
+# > require './algorithms/DynamicProgramming.rb'
 # > DynamicProgramming.test
 

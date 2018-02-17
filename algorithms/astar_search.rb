@@ -2,12 +2,12 @@
 # A* Search Algorithm
 # https://en.wikipedia.org/wiki/A*_search_algorithm
 
-require './priority_queue.rb'
-require './grids.rb'
+require './algorithms/priority_queue.rb'
+require './algorithms/grids.rb'
 
 module AstarSearch
 
-  def self.astar(grid, source, target)
+  def self.astar(grid, source, target, neighborship = 'neighbors4')
     frontier = PriorityQueue.new
     frontier.push(source, 0)
 
@@ -20,8 +20,8 @@ module AstarSearch
       current = frontier.pop.first
       return if current == target
 
-      neighbors = grid.neighbors4(current)
-      neighbors.reject! { |neighbor| grid[neighbor.x][neighbor.y] != 0 }
+      neighbors = grid.send(neighborship, current)
+      neighbors.reject! { |neighbor| grid[neighbor.y][neighbor.x] != 0 }
       neighbors.each do |neighbor|
         new_cost = cost[current.key] + Grid.cityblock_distance(current, neighbor)
         if !cost.keys.include?(neighbor.key) || new_cost < cost[neighbor.key]
@@ -35,8 +35,8 @@ module AstarSearch
     return previous, cost
   end
 
-  def self.shortest_path(grid, source, target)
-    previous, cost = astar(grid, source, target)
+  def self.shortest_path(grid, source, target, neighborship = 'neighbors4')
+    previous, cost = astar(grid, source, target, neighborship)
     result = [target.key]
     node = target.key
     while previous[node]
@@ -57,18 +57,15 @@ module AstarSearch
     grid.print
 
     result = shortest_path(grid, Point.new(0,0), Point.new(5,5))
-    puts "shortest path von top left to bottom right:"
+    puts "shortest path from top left to bottom right:"
     puts result.join("\n")
 
-    result.each do |key|
-      point = Point.new_from_key(key)
-      grid[point.x][point.y] = '.'
-    end
+    grid.mark_points(result)
     grid.print
   end
 end
 
 # usage
 # $ irb
-# > require './astar_search.rb'
+# > require './algorithms/astar_search.rb'
 # > AstarSearch.test

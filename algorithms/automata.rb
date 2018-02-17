@@ -58,7 +58,7 @@ end
 
 # usage
 # $ irb
-# require './automata.rb'
+# require './algorithms/automata.rb'
 # automaton = Automata::ElementaryCA.new(rule: 30, width: 32, start: :middle)
 # 16.times do puts automaton.state; automaton.evolve end
 

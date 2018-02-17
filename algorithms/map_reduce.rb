@@ -64,7 +64,7 @@ puts process_input(ARGV[0]) if __FILE__==$0
 
 # usage
 # $ irb
-# > require './map_reduce.rb'
+# > require './algorithms/map_reduce.rb'
 # > MapReduce.test
 
 # or

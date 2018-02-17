@@ -3,7 +3,7 @@
 # https://en.wikipedia.org/wiki/PageRank
 # and http://www.ams.org/samplings/feature-column/fcarc-pagerank
 
-require './graphs.rb'
+require './algorithms/graphs.rb'
 require 'matrix'
 
 module PageRank

@@ -3,7 +3,7 @@
 # https://en.wikipedia.org/wiki/Partition_problem
 # http://www.americanscientist.org/issues/pub/the-easiest-hard-problem
 
-require './priority_queue.rb'
+require './algorithms/priority_queue.rb'
 
 module KarmarkarKarp
 
@@ -67,6 +67,6 @@ end
 
 # usage
 # $ irb
-# > require './karmarkar_karp.rb'
+# > require './algorithms/karmarkar_karp.rb'
 # > KarmarkarKarp.test
 # > KarmarkarKarp.partition([17, 6, 13, 9, 19 ])
