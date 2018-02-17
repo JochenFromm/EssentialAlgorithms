@@ -4,6 +4,43 @@
 
 module DynamicProgramming
 
+  # find Longest Common Subsequence (LCS)
+  def self.lcs(s, t)
+    m = s.length
+    n = t.length
+
+    d = Array.new(m+1) { Array.new(n+1, 0) }
+
+    # d[i][j] contains length of LCS of s[0..i-1] and t[0..j-1]
+    (0..m).each do |i|
+      (0..n).each do |j|
+        if i == 0 or j == 0
+          d[i][j] = 0
+        elsif s[i-1] == t[j-1]
+          d[i][j] = d[i-1][j-1]+1
+        else
+          d[i][j] = [d[i-1][j], d[i][j-1]].max
+        end
+      end
+    end
+
+    sequence = lambda do |i,j|
+      if i == 0 || j == 0
+        return []
+      elsif s[i-1] == t[j-1]
+        return sequence.call(i-1, j-1) + [s[i-1]]
+      elsif d[i-1][j] > d[i][j-1]
+        return sequence.call(i-1, j)
+      else
+        return sequence.call(i, j-1)
+      end
+    end
+
+    # d[m][n] contains the length of LCS of s[0..n-1] & t[0..m-1]
+    sequence.call(m, n).join('')
+  end
+
+
   # Input:
   # Values (stored in array v)
   # Weights (stored in array w)
