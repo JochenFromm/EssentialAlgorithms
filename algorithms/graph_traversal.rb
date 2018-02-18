@@ -8,29 +8,65 @@ require './algorithms/graphs.rb'
 
 module GraphTraversal
 
-  # DFS is based on a LIFO Queue (= Stack)
-  def self.dfs(graph, node)
-    mark_unvisited(graph)
+  def self.scc(graph, node, &block)
+    index = 0
     stack = []
-    stack << node
-    traversal(graph, stack)
-  end
+    mark(graph, :visited, false)
 
-  # BFS is based on a FIFO Queue (= Queue)
-  def self.bfs(graph, node)
-    mark_unvisited(graph)
-    queue = Queue.new
-    queue << node
-    traversal(graph, queue)
-  end
+    tarjan = lambda do |node|
+      node.index = index
+      node.lowlink = index
+      index += 1
+      stack.push(node)
+      node.visited = true
 
-  def self.mark_unvisited(graph)
+      graph.find_nodes(node.neighbors).each do |neighbor|
+        if !neighbor.visited
+          tarjan.call(neighbor)
+          node.lowlink = [node.lowlink, neighbor.lowlink].min
+        elsif stack.include?(neighbor)
+          node.lowlink = [node.lowlink, neighbor.index].min
+        end
+      end
+
+      if node.lowlink == node.index && block
+        component = []
+        begin
+          element = stack.pop
+          component << element.name
+        end while element != node
+        block.call component.join('-')
+      end
+    end
+
     graph.nodes.each do |node|
-      node.visited = false
+      tarjan.call(node) unless node.visited
     end
   end
 
-  def self.traversal(graph, array)
+  # DFS is based on a LIFO Queue (= Stack)
+  def self.dfs(graph, node, &block)
+    mark(graph, :visited, false)
+    stack = []
+    stack << node
+    traversal(graph, stack, &block)
+  end
+
+  # BFS is based on a FIFO Queue (= Queue)
+  def self.bfs(graph, node, &block)
+    mark(graph, :visited, false)
+    queue = Queue.new
+    queue << node
+    traversal(graph, queue, &block)
+  end
+
+  def self.mark(graph, attribute, value)
+    graph.nodes.each do |node|
+      node.send("#{attribute}=", value)
+    end
+  end
+
+  def self.traversal(graph, array, &block)
     cycle = false
     result = []
     while !array.empty?
@@ -45,7 +81,7 @@ module GraphTraversal
         end
       end
     end
-    puts "cycle detected" if cycle
+    block.call "cycle detected" if cycle && block
     return result
   end
 
@@ -67,11 +103,15 @@ module GraphTraversal
     graph = Graph.new(nodes: nodes)
 
     puts "***** DFS *****"
-    result = dfs(graph, graph.find_node("a"))
+    result = dfs(graph, graph.find_node("a")) do |event|
+      puts event
+    end
     puts result.join('-')
 
     puts "***** BFS *****"
-    result = bfs(graph, graph.find_node("a"))
+    result = bfs(graph, graph.find_node("a")) do |event|
+      puts event
+    end
     puts result.join('-')
   end
 end

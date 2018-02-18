@@ -38,6 +38,9 @@ Graph and Tree Search
 * [A* search algorithm](algorithms/astar_search.rb)
   https://en.wikipedia.org/wiki/A*_search_algorithm
 
+* [Tarjan's algorithm](algorithms/graph_traversal.rb)
+  https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm
+
 Combinatorial optimization
 
 * [Dynamic Programming](algorithms/dynamic_programming.rb)
